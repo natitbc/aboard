@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 // import { useRouter } from "next/router";
-import Header from "@/app/components/ui/Header";
 import { useEffect, useState } from "react";
+import { Button } from "@/app/components/ui/Button";
 
 import TopicCard, { TopicCardProps } from "@/app/components/content/TopicCard";
 
@@ -37,7 +37,10 @@ export default function PostPage({ params }: { params: { id: string } }) {
 
   return (
     <>
-      <TopicCard key={parseInt(params.id)} {...data} />
+      <div className="max-w-[800px] bg-[#fff] h-screen">
+        <TopicCard key={parseInt(params.id)} {...data} descType="full" />
+        <Button type="secondary">Add Comments</Button>
+      </div>
     </>
   );
 }

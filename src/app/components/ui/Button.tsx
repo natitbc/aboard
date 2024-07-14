@@ -17,7 +17,7 @@ interface ButtonProps {
 
 export const Button = (props: ButtonProps) => {
   const buttonType = (): string => {
-    let btnMain = `py-[10px] w-[105px] text-center justify-center`;
+    let btnMain = `py-[10px] min-w-[105px] w-fit text-center justify-center px-4`;
     switch (props.type) {
       case "primary":
         return (
@@ -26,13 +26,12 @@ export const Button = (props: ButtonProps) => {
       case "secondary":
         return (
           btnMain +
-          "text-green-board-300 bg-green-board-100 hover:bg-green-board-200 border border-green-board-300 rounded-md"
+          " text-success font-medium hover:bg-green-board-200 border border-success rounded-lg"
         );
       default:
         return "text-green-board-300 bg-green-board-100 hover:bg-green-board-200";
     }
   };
-  const className = props.className ? " " + props.className : "";
 
   const handleClick = (
     e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>

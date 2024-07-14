@@ -8,5 +8,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <BoardLayout>{children}</BoardLayout>;
+  return <BoardLayout bgcolor="#fff">{children}</BoardLayout>;
 }

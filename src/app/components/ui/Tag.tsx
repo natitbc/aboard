@@ -7,8 +7,7 @@ interface tag {
 
 export default function Tag(props: tag) {
   const { text } = props;
-
-  if (!text) return null;
+  
 
   return (
     <div>
