@@ -1,12 +1,10 @@
 import React from 'react'
-import Header from '@/app/components/ui/Header'
-import Board from '@/app/components/board/Board'
+import Content from '@/app/components/content/Content'
 
 export default function page() {
   return (
     <>
-      <Header></Header>
-      <Board />
+      <Content />
     </>
   )
 }
