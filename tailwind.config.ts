@@ -14,6 +14,10 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
+    fontFamily: {
+      inter: ["Inter", "sans-serif"],
+      plex: ["IBM Plex Sans", "sans-serif"],
+    },
     colors: {
       "green-board": {
         "500": "#243831",
