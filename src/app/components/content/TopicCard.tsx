@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Tag from "../ui/Tag";
 import CommentCounter from "../ui/CommentCounter";
 
@@ -22,7 +23,7 @@ export default function TopicCard(props: TopicCardProps) {
 
   return (
     <>
-      <div className="w-full bg-[#fff] p-5 border-b-2 border-gray-board-100 first-of-type:rounded-t-[12px] last-of-type:rounded-b-[12px] last-of-type:border-b-0">
+      <div className="w-full bg-[#fff] p-5 ps-0 border-b-2 border-gray-board-100 first-of-type:rounded-t-[12px] last-of-type:rounded-b-[12px] last-of-type:border-b-0">
         <div className="flex gap-4 mb-4">
           <Image
             src={auther.img}
@@ -36,8 +37,12 @@ export default function TopicCard(props: TopicCardProps) {
         {tag.map((tag, idx) => (
           <Tag key={idx} text={tag}></Tag>
         ))}
-        <div className="my-2">
-          <h3 className="text-black-board-500 font-semibold">{title}</h3>
+        <div className="my-2 mb-[28px]">
+          <Link href={`/posts/${props.id}`}>
+            <h3 className="text-black-board-500 font-semibold text-[28px] mb-4">
+              {title}
+            </h3>
+          </Link>
           {descType === "full" ? (
             <p className="text-black-board-500 text-sm">{description}</p>
           ) : (

@@ -35,12 +35,12 @@ function BoardLayout({
     <>
       <BoardHeader />
       <div
-        className={`flex bg-[${bgcolor}] flex-row items-start relative w-full h-screen py-8 overflow-y-auto`}
+        className={`flex bg-[${bgcolor}] flex-row items-start relative w-full h-screen overflow-y-auto`}
       >
         <div className={"hidden md:block"}>
           <BoardSideMenu />
         </div>
-        <div className={"max-w-[798px] px-4"}>{children}</div>
+        <div className={"max-w-[798px] px-4 pt-8"}>{children}</div>
       </div>
     </>
   );
