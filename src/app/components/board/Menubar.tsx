@@ -9,7 +9,7 @@ export default function Menubar() {
       <div className="w-full">
         <Searchbox />
       </div>
-      <div className="flex gap-4">
+      <div className="gap-4 hidden md:flex">
         <CategoryDropdown />
         <Button type="primary" html="a" link="/signin">
           Create +

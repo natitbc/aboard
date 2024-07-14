@@ -3,7 +3,8 @@ import Image from "next/image";
 import Tag from "../ui/Tag";
 import CommentCounter from "../ui/CommentCounter";
 
-interface TopicCardProps {
+export interface TopicCardProps {
+  id: number;
   auther: {
     id: number;
     name: string;
@@ -21,7 +22,7 @@ export default function TopicCard(props: TopicCardProps) {
 
   return (
     <>
-      <div className="w-full bg-[#fff] rounded-md p-5">
+      <div className="w-full bg-[#fff] rounded-md p-5 border-b-1 border-gray-board-300">
         <div className="flex gap-4 mb-4">
           <Image
             src={auther.img}
