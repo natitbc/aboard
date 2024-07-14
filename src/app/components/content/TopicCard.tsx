@@ -22,7 +22,7 @@ export default function TopicCard(props: TopicCardProps) {
 
   return (
     <>
-      <div className="w-full bg-[#fff] rounded-md p-5 border-b-1 border-gray-board-300">
+      <div className="w-full bg-[#fff] p-5 border-b-2 border-gray-board-100 first-of-type:rounded-t-[12px] last-of-type:rounded-b-[12px] last-of-type:border-b-0">
         <div className="flex gap-4 mb-4">
           <Image
             src={auther.img}
