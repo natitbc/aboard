@@ -17,7 +17,7 @@ interface ButtonProps {
 
 export const Button = (props: ButtonProps) => {
   const buttonType = (): string => {
-    let btnMain = `py-[10px] w-100`;
+    let btnMain = `py-[10px] w-fit px-[30px] `;
     switch (props.type) {
       case "primary":
         return (
