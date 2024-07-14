@@ -9,15 +9,26 @@ import {
 import { MenuItem as BaseMenuItem, MenuItemProps } from "@mui/base/MenuItem";
 import { Dropdown } from "@mui/base/Dropdown";
 import { useTheme } from "@mui/system";
+import Image from "next/image";
 
 function useIsDarkMode() {
   const theme = useTheme();
-  return theme.palette.mode === "dark";
+  return theme.palette.mode === "light";
 }
 
+const menuData = [
+  "History",
+  "Food",
+  "Pets",
+  "Health",
+  "Fashion",
+  "Exercise",
+  "Others",
+];
 export default function CategoryDropdown() {
   // Replace this with your app logic for determining dark mode
-  const isDarkMode = useIsDarkMode();
+  // const isDarkMode = useIsDarkMode();
+  const isDarkMode = "";
 
   const createHandleMenuClick = (menuItem: string) => {
     return () => {
@@ -28,17 +39,27 @@ export default function CategoryDropdown() {
   return (
     <div className={`${isDarkMode ? "dark" : ""}`}>
       <Dropdown>
-        <MenuButton>My account</MenuButton>
+        <MenuButton>
+          Community{" "}
+          <span>
+            <Image
+              src="/img/icon-chevron-down.svg"
+              alt="arrow"
+              width={10}
+              height={10}
+            ></Image>
+          </span>
+        </MenuButton>
         <Menu>
-          <MenuItem onClick={createHandleMenuClick("Profile")}>
-            Profile
-          </MenuItem>
-          <MenuItem onClick={createHandleMenuClick("Language settings")}>
-            Language settings
-          </MenuItem>
-          <MenuItem onClick={createHandleMenuClick("Log out")}>
-            Log out
-          </MenuItem>
+          {menuData.map((menuItem) => (
+            <MenuItem
+              key={menuItem}
+              onClick={createHandleMenuClick(menuItem)}
+              data-testid="menu-item"
+            >
+              {menuItem}
+            </MenuItem>
+          ))}
         </Menu>
       </Dropdown>
     </div>
@@ -79,7 +100,7 @@ const Menu = React.forwardRef<HTMLDivElement, MenuProps>((props, ref) => {
           return {
             ...resolvedSlotProps,
             className: clsx(
-              "text-sm box-border font-sans p-1.5 my-3 mx-0 rounded-xl overflow-auto outline-0 bg-white dark:bg-slate-900 border border-solid border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-300 min-w-listbox shadow-md dark:shadow-slate-900",
+              "bg-[#fff] text-sm box-border w-[320px] font-plex py-1.5 my-3 mx-0 rounded-xl overflow-auto outline-0 bg-white dark:bg-slate-900 border border-solid border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-300 min-w-listbox shadow-md dark:shadow-slate-900",
               resolvedSlotProps?.className
             ),
           };
@@ -96,7 +117,7 @@ const MenuButton = React.forwardRef<HTMLButtonElement, MenuButtonProps>(
       <BaseMenuButton
         ref={ref}
         className={clsx(
-          "cursor-pointer text-sm font-sans box-border rounded-lg font-semibold px-4 py-2 bg-white dark:bg-slate-900 border border-solid border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-200 hover:bg-slate-50 hover:dark:bg-slate-800 hover:border-slate-300 dark:hover:border-slate-600 focus-visible:shadow-[0_0_0_4px_#ddd6fe] dark:focus-visible:shadow-[0_0_0_4px_#a78bfa] focus-visible:outline-none shadow-sm active:shadow-none",
+          "flex items-center gap-[5px] cursor-pointer text-sm min-w-[128px] font-sans box-border rounded-lg font-semibold px-4 py-2 bg-white dark:bg-slate-900 border-0 text-black-board-500 dark:border-slate-700 text-black dark:text-slate-200 hover:bg-slate-50 hover:dark:bg-slate-800 hover:border-slate-300 dark:hover:border-slate-600 focus-visible:shadow-[0_0_0_4px_#ddd6fe] dark:focus-visible:shadow-[0_0_0_4px_#a78bfa] focus-visible:outline-none shadow-sm active:shadow-none",
           className
         )}
         {...other}
@@ -112,7 +133,7 @@ const MenuItem = React.forwardRef<HTMLLIElement, MenuItemProps>(
       <BaseMenuItem
         ref={ref}
         className={clsx(
-          "list-none p-2 rounded-lg cursor-default select-none last-of-type:border-b-0 focus:shadow-outline-purple focus:outline-0 focus:bg-slate-100 focus:dark:bg-slate-800 focus:text-slate-900 focus:dark:text-slate-300 disabled:text-slate-400 disabled:dark:text-slate-700 disabled:hover:text-slate-400 disabled:hover:dark:text-slate-700",
+          "list-none py-2 px-[14px] cursor-default select-none last-of-type:border-b-0  text-black-board-500 focus:shadow-outline-purple focus:outline-0 focus:bg-green-board-100 focus:dark:bg-slate-800 focus:text-slate-900 focus:dark:text-slate-300 disabled:text-slate-400 disabled:dark:text-slate-700 disabled:hover:text-slate-400 disabled:hover:dark:text-slate-700",
           className
         )}
         {...other}

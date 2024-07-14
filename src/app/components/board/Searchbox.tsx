@@ -15,7 +15,7 @@ export default function Searchbox() {
         <input
           type="text"
           placeholder="Search"
-          className="w-full bg-[transparent] ps-6 font-plex font-light"
+          className="w-full bg-[transparent] ps-6 font-plex font-light focus:outline-0"
         />
       </div>
     </>
