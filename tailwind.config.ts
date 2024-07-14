@@ -14,6 +14,20 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
+    colors: {
+      "green-board": {
+        "500": "#243831",
+        "300": "#2B5F44",
+        "100": "#D8E9E4",
+      },
+      "black-board": {
+        "500": "#101828",
+      },
+      "gray-board": {
+        "300": "#939494",
+        "100": "#BBC2C0",
+      },
+    },
   },
   plugins: [],
 };
