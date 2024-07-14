@@ -1,3 +1,4 @@
+import { Castoro } from "next/font/google";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -17,8 +18,10 @@ const config: Config = {
     fontFamily: {
       inter: ["Inter", "sans-serif"],
       plex: ["IBM Plex Sans", "sans-serif"],
+      castoro: ["Castoro", "serif"],
     },
     colors: {
+      success: "#49A569",
       "green-board": {
         "500": "#243831",
         "300": "#2B5F44",
