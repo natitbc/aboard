@@ -5,8 +5,8 @@ import CategoryDropdown from "./CategoryDropdown";
 
 export default function Menubar() {
   return (
-    <div className="flex flex-row justify-between gap-[20px]">
-      <div className="w-[535px]">
+    <div className="flex flex-row justify-between gap-[20px] mb-6">
+      <div className="w-full">
         <Searchbox />
       </div>
       <div className="flex gap-4">

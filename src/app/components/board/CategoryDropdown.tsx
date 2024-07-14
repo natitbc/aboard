@@ -117,7 +117,7 @@ const MenuButton = React.forwardRef<HTMLButtonElement, MenuButtonProps>(
       <BaseMenuButton
         ref={ref}
         className={clsx(
-          "flex items-center gap-[5px] cursor-pointer text-sm min-w-[128px] font-sans box-border rounded-lg font-semibold px-4 py-2 bg-white dark:bg-slate-900 border-0 text-black-board-500 dark:border-slate-700 text-black dark:text-slate-200 hover:bg-slate-50 hover:dark:bg-slate-800 hover:border-slate-300 dark:hover:border-slate-600 focus-visible:shadow-[0_0_0_4px_#ddd6fe] dark:focus-visible:shadow-[0_0_0_4px_#a78bfa] focus-visible:outline-none shadow-sm active:shadow-none",
+          "flex items-center gap-[5px] cursor-pointer text-sm min-w-[128px] font-sans box-border rounded-lg font-semibold px-4 py-2 bg-white dark:bg-slate-900 border-0 text-black-board-500 shadow-none  dark:border-slate-700 text-black dark:text-slate-200 hover:bg-slate-50 hover:dark:bg-slate-800 hover:border-slate-300 dark:hover:border-slate-600dark:focus-visible:shadow-[0_0_0_4px_#a78bfa] focus-visible:outline-none active:shadow-none",
           className
         )}
         {...other}
