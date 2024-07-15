@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/app/components/ui/Button";
 
 import TopicCard, { TopicCardProps } from "@/app/components/content/TopicCard";
+import CommentBox from "@/app/components/content/CommentBox";
 
 export interface CommentProps {
   id: number;
@@ -22,6 +23,7 @@ export interface CommentProps {
 
 export default function PostPage({ params }: { params: { id: string } }) {
   const [topic, setTopic] = useState<TopicCardProps | null>(null);
+  const [isComment, setIsComment] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,9 +47,18 @@ export default function PostPage({ params }: { params: { id: string } }) {
     return <div>Loading...</div>;
   }
 
+  function handleCancel() {
+    console.log("cancel");
+    setIsComment(!isComment);
+  }
+  function handlePost() {
+    console.log("post");
+    setIsComment(!isComment);
+  }
+
   return (
     <>
-      <div className="max-w-[800px] bg-[#fff] h-screen ps-[144px]">
+      <div className="max-w-[800px] bg-[#fff] h-screen ps-[144px] overflow-y-scroll">
         <Link href="/homepage">
           <Image
             src="/img/icon-arrow-right-green.svg"
@@ -58,7 +69,14 @@ export default function PostPage({ params }: { params: { id: string } }) {
           ></Image>
         </Link>
         <TopicCard key={parseInt(params.id)} {...topic} descType="full" />
-        <Button type="secondary">Add Comments</Button>
+        {!isComment && (
+          <Button type="secondary" onClick={() => setIsComment(!isComment)}>
+            Add Comments
+          </Button>
+        )}
+        {isComment && (
+          <CommentBox handleCancel={handleCancel} handlePost={handlePost}/>
+        )}
         {topic.comments &&
           topic.comments.map((comment: CommentProps) => (
             <CommentCard key={comment.id} {...comment} />
