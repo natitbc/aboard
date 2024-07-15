@@ -40,7 +40,7 @@ function BoardLayout({
         <div className={"hidden md:block"}>
           <BoardSideMenu />
         </div>
-        <div className={"max-w-[798px] px-4 pt-8 overflow-hidden"}>{children}</div>
+        <div className={"max-w-[798px] px-4 py-8 overflow-hidden"}>{children}</div>
       </div>
     </>
   );

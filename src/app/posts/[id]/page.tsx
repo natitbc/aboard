@@ -58,7 +58,7 @@ export default function PostPage({ params }: { params: { id: string } }) {
 
   return (
     <>
-      <div className="max-w-[800px] bg-[#fff] h-screen ps-[144px] overflow-y-scroll">
+      <div className="max-w-[800px] bg-[#fff] ps-[144px]">
         <Link href="/homepage">
           <Image
             src="/img/icon-arrow-right-green.svg"
@@ -75,7 +75,7 @@ export default function PostPage({ params }: { params: { id: string } }) {
           </Button>
         )}
         {isComment && (
-          <CommentBox handleCancel={handleCancel} handlePost={handlePost}/>
+          <CommentBox handleCancel={handleCancel} handlePost={handlePost} />
         )}
         {topic.comments &&
           topic.comments.map((comment: CommentProps) => (

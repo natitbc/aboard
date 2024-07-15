@@ -3,7 +3,7 @@ import { Button } from "../ui/Button";
 import Searchbox from "./Searchbox";
 import CategoryDropdown from "./CategoryDropdown";
 
-export default function Menubar() {
+export default function Menubar(props: any) {
   return (
     <div className="flex flex-row justify-between gap-[20px] mb-6">
       <div className="w-full">
@@ -11,7 +11,8 @@ export default function Menubar() {
       </div>
       <div className="gap-4 hidden md:flex">
         <CategoryDropdown />
-        <Button type="primary" html="a" link="/signin">
+       
+        <Button type="primary"  onClick={props.handleOpenPost}>
           Create +
         </Button>
       </div>
