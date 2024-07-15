@@ -17,6 +17,7 @@ export interface TopicCardProps {
   commentNum: number;
   descType: "short" | "full";
   comments?: {
+    [x: string]: any;
     id: number;
     auther: {
       id: number;
