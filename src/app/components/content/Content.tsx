@@ -20,7 +20,7 @@ export default function Content() {
 
   return (
     <>
-      <div className="w-full bg-[#fff] rounded-md">
+      <div className="w-full bg-[#fff] rounded-md px-5">
         {data.map((topic) => (
           <TopicCard key={topic.id} {...topic} />
         ))}

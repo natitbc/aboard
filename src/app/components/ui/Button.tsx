@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import style from "./Button.module.scss";
 
 interface ButtonProps {
   type?: "primary" | "secondary";
@@ -11,7 +10,6 @@ interface ButtonProps {
     e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
   ) => void;
   children: React.ReactNode | React.ReactNode[];
-  className?: string;
   disabled?: boolean;
 }
 
@@ -21,7 +19,7 @@ export const Button = (props: ButtonProps) => {
     switch (props.type) {
       case "primary":
         return (
-          btnMain + "text-white bg-success hover:bg-green-board-300 rounded-md"
+          btnMain + " text-white bg-success hover:bg-green-board-300 rounded-md"
         );
       case "secondary":
         return (
@@ -29,7 +27,7 @@ export const Button = (props: ButtonProps) => {
           " text-success font-medium hover:bg-green-board-200 border border-success rounded-lg"
         );
       default:
-        return "text-green-board-300 bg-green-board-100 hover:bg-green-board-200";
+        return " text-green-board-300 bg-green-board-100 hover:bg-green-board-200";
     }
   };
 
